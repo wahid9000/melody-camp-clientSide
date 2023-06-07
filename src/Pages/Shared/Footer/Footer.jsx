@@ -9,7 +9,7 @@ const Footer = () => {
                     <Link to='/'>
                         <div><img src="logo.png" className=" rounded-2xl w-48" alt="" /></div>
                     </Link>
-                    <p className='text-lg text-black roboto'>Summer Camp<br />Music Instrument Learning School</p>
+                    <p className='text-lg text-black roboto'>Melody Camp<br />Music Instrument Learning School</p>
                 </div>
 
                 <div className="text-black">
@@ -20,7 +20,7 @@ const Footer = () => {
                     </div>
                     <div className='flex gap-1 items-center'>
                         <FaMailchimp></FaMailchimp>
-                        <Link>Email: sm_camp_mels@email.ca</Link>
+                        <Link>Email: melody_camp_@email.ca</Link>
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className='text-center text-black bg-[#faf2de] pb-5'>
-                <h2>Copyright © 2023 Summer Camp</h2>
+                <h2>Copyright © 2023 Melody Camp</h2>
             </div>
         </div>
     );

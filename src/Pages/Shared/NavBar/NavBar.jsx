@@ -1,6 +1,36 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        Swal.fire({
+            title: 'Log Out?',
+            text: "You will be redirected to the Login page!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Log Out!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+        logOut();
+        navigate('/signIn')
+        Swal.fire(
+            'LogOut Successful!',
+            'User has been logged out.',
+            'success'
+          )
+        }
+      })
+
+    }
+
     return (
         <div className="navbar bg-[#faf2de] lg:px-28 py-5">
             <div className="navbar-start">
@@ -13,8 +43,11 @@ const NavBar = () => {
                         <li>
                             <a>Parent</a>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><Link>Home</Link></li>
+                                <li><Link>Instructors</Link></li>
+                                <li><Link>Classes</Link></li>
+                                <li><Link>Dashboard</Link></li>
+                                <li><Link to='/signIn'>SignIn</Link></li>
                             </ul>
                         </li>
                         <li><a>Item 3</a></li>
@@ -27,8 +60,25 @@ const NavBar = () => {
                     <li><Link>Home</Link></li>
                     <li><Link>Instructors</Link></li>
                     <li><Link>Classes</Link></li>
-                    <li><Link>Dashboard</Link></li>
-                    <li><Link>Login</Link></li>
+                    {
+                        user && <li><Link>Dashboard</Link></li>
+                    }
+                    {
+                        user ?
+
+                            <div className="flex justify-center items-center">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </label>
+
+                                <button onClick={handleLogOut} className="ml-2 btn btn-warning bg-amber-300">Logout</button>
+                            </div>
+
+                            :
+                            <Link to='/signIn'><button className="btn font-bold btn-warning bg-amber-300">Sign In</button></Link>
+                    }
                 </ul>
             </div>
             <div className="navbar-end lg:hidden">
