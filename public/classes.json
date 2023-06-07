@@ -1,0 +1,62 @@
+[
+    {
+        "_id": "101",
+        "class_id": "1",
+        "class_name": "Guitar Techniques",
+        "class_image": "https://i.ibb.co/Lk5GG0h/young-student-learning-how-play-guitar.jpg",
+        "instructor_name": "John Doe",
+        "instructor_email": "john.doe@example.com",
+        "available_seats": 2,
+        "price": 20.99
+    },
+    {
+        "_id": "202",
+        "class_id": "2",
+        "class_name": "Piano for Beginners",
+        "class_image": "https://i.ibb.co/6sxkXWQ/father-daughter-playing-piano.jpg",
+        "instructor_name": "Jane Smith",
+        "instructor_email": "jane.smith@example.com",
+        "available_seats": 3,
+        "price": 25.99
+    },
+    {
+        "_id": "303",
+        "class_id": "3",
+        "class_name": "Drumming Essentials",
+        "class_image": "https://i.ibb.co/M6yGqxv/musician-band-jamming-together-art-workplace-with-instruments.jpg",
+        "instructor_name": "Mike Johnson",
+        "instructor_email": "mike.johnson@example.com",
+        "available_seats": 5,
+        "price": 18.99
+    },
+    {
+        "_id": "404",
+        "class_id": "4",
+        "class_name": "Violin Mastery",
+        "class_image": "https://i.ibb.co/Y39qvLZ/beautiful-romantic-girls-park-with-violin-1.jpg",
+        "instructor_name": "Sarah Thompson",
+        "instructor_email": "sarah.thompson@example.com",
+        "available_seats": 9,
+        "price": 22.99
+    },
+    {
+        "_id": "505",
+        "class_id": "5",
+        "class_name": "Saxophone Essentials",
+        "class_image": "https://i.ibb.co/PM08Tzq/saxophone.webp",
+        "instructor_name": "Mark Davis",
+        "instructor_email": "mark.davis@example.com",
+        "available_seats": 8,
+        "price": 15.99
+    },
+    {
+        "_id": "606",
+        "class_id": "6",
+        "class_name": "Vocal Training",
+        "class_image": "https://i.ibb.co/5hqkkMg/Vocal.jpg",
+        "instructor_name": "Emily Wilson",
+        "instructor_email": "emily.wilson@example.com",
+        "available_seats": 7,
+        "price": 19.99
+    }
+]
