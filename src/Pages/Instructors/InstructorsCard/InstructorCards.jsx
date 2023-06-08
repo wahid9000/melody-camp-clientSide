@@ -9,8 +9,8 @@ const InstructorCards = ({instructor}) => {
             <div>
                 <h2 className="font-bold text-xl">Profile Details</h2>
                 <div className="divider w-40"></div> 
-                <p>Name: {instructor_name}</p>
-                <p>Email: {instructor_email}</p>
+                <p>Name: <span className="font-semibold">{instructor_name}</span></p>
+                <p>Email: <span className="font-semibold">{instructor_email}</span></p>
             </div>
         </div>
     );
