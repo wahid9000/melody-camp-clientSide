@@ -1,53 +1,47 @@
 [
     {
-        "_id": "1",
         "instructor_id": "1",
-        "instructor_image": "https://i.ibb.co/WD23SZ0/corey-collins-j-Kv4-6z-XUBw-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/g6xQPm7/corey-collins-j-Kv4-6z-XUBw-unsplash.jpg",
         "instructor_name": "John Doe",
         "instructor_email": "john.doe@example.com",
         "class_taken": "Guitar Techniques",
-        "instructor_detail": "Guitarist, composer, and educator is the first in a long line of prize-winning students of Jim Smith."
+        "instructor_detail": "Guitarist, composer, eudcator in a long line of prize-winning students of Jim Smith."
     },
     {
-        "_id": "2",
         "instructor_id": "2",
-        "instructor_image": "https://i.ibb.co/DbmV4rg/ali-morshedlou-WMD64t-Mfc4k-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/8P4NTY3/ali-morshedlou-WMD64t-Mfc4k-unsplash.jpg",
         "instructor_name": "Jane Smith",
         "instructor_email": "jane.smith@example.com",
         "class_taken": "Piano for Beginners",
-        "instructor_detail": "Sandy GoldPIANO Sandy Gold Highly regarded teacher, chamber music coach whose students have won numerous competitions."
+        "instructor_detail": "Sandy Gold Highly regarded teacher, whose students have won numerous competitions."
     },
     {
-        "_id": "3",
         "instructor_id": "3",
-        "instructor_image": "https://i.ibb.co/jhFbgPM/albert-dera-ILip77-Sbm-OE-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/gtGKVMM/albert-dera-ILip77-Sbm-OE-unsplash.jpg",
         "instructor_name": "Mike Johnson",
         "instructor_email": "mike.johnson@example.com",
         "class_taken": "Drumming Essentials",
-        "instructor_detail": "Winner of numerous awards and the recipient of a Achievement Award from the American Drums Society."
+        "instructor_detail": "Winner of numerous awards and a Achievement Award from the American Drums Society."
     },
     {
-        "_id": "4",
         "instructor_id": "4",
-        "instructor_image": "https://i.ibb.co/mBYLkZt/christina-wocintechchat-com-k-Xm-Kq-YOGA4-Y-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/sWmNgD1/christina-wocintechchat-com-k-Xm-Kq-YOGA4-Y-unsplash.jpg",
         "instructor_name": "Sarah Thompson",
         "instructor_email": "sarah.thompson@example.com",
         "class_taken": "Violin Mastery",
-        "instructor_detail": "Mary May, violinist, enjoys a versatile career as a performer, recording artist, and educator."
+        "instructor_detail": "Mary May, violinist, career as a performer, recording artist, and educator."
     },
     {
-        "_id": "5",
         "instructor_id": "5",
-        "instructor_image": "https://i.ibb.co/LCMtKvF/timothy-barlin-FGakn-Wv-Nb-Bk-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/qgvMFz4/timothy-barlin-FGakn-Wv-Nb-Bk-unsplash.jpg",
         "instructor_name": "Mark Davis",
         "instructor_email": "mark.davis@example.com",
         "class_taken": "Saxophone Essentials",
-        "instructor_detail": "Winner of numerous awards and the recipient of a Achievement Award from the American Drums Society."
+        "instructor_detail": "Winner of numerous awards and  Achievement Award from the American Drums Society."
     },
     {
-        "_id": "6",
         "instructor_id": "6",
-        "instructor_image": "https://i.ibb.co/2WNNDT1/wisma-urcine-El-WRU1-v-L-k-unsplash.jpg",
+        "instructor_image": "https://i.ibb.co/9h2TgvC/wisma-urcine-El-WRU1-v-L-k-unsplash.jpg",
         "instructor_name": "Emily Wilson",
         "instructor_email": "emily.wilson@example.com",
         "class_taken": "Vocal Training",
