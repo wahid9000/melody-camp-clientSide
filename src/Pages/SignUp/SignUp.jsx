@@ -5,29 +5,38 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
+import axios from "axios";
 
 const SignUp = () => {
-    const {createUser, updateUserProfile, logOut } = useContext(AuthContext)
+    const { createUser, updateUserProfile, logOut } = useContext(AuthContext)
     const navigate = useNavigate();
 
-    const { register, handleSubmit, watch, reset,  formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         createUser(data.email, data.password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            updateUserProfile(data.name, data.photoURL),
-            reset(),
-            logOut();
-            navigate('/signIn')
-            Swal.fire({
-                title: 'Please Login',
-                text: 'User Registration Successful. Please Login',
-                icon: 'success',
-                confirmButtonText: 'Continue'
-              })
-        })
-        .catch(error => console.log(error));
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photoURL);
+                const saveUser = { name: data.name, email: data.email };
+                axios.post('http://localhost:5000/users', saveUser)
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.insertedId) {
+                            reset();
+                            logOut();
+                            navigate('/signIn')
+                            Swal.fire({
+                                title: 'Please Login',
+                                text: 'User Registration Successful. Please Login',
+                                icon: 'success',
+                                confirmButtonText: 'Continue'
+                            })
+                        }
+                    })
+
+            })
+            .catch(error => console.log(error));
     };
 
 
@@ -106,7 +115,7 @@ const SignUp = () => {
                             <p>Already have an account?  <Link className="font-semibold text-blue-800" to='/signIn'>SignIn Here</Link></p>
                         </div>
                         <div className="text-center">
-                        <SocialLogin></SocialLogin>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>

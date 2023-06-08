@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SocialLogin = () => {
     const { googleLogin } = useContext(AuthContext)
@@ -16,13 +17,18 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from, {replace: true})
-                Swal.fire({
-                    title: 'Login Success',
-                    text: 'User LoggedIn Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Continue'
-                })
+                const saveUser = { name: loggedUser.displayName, email: loggedUser.email };
+                axios.post('http://localhost:5000/users', saveUser)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate(from, { replace: true })
+                        Swal.fire({
+                            title: 'Sign In Successful',
+                            text: 'Thanks for Signing In',
+                            icon: 'success',
+                            confirmButtonText: 'Continue'
+                        })
+                    })
             })
             .catch(error => console.log(error))
     }
