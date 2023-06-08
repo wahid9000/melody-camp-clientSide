@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import './SignIn.css'
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
@@ -11,7 +11,10 @@ const SignIn = () => {
 
     const { loginUser } = useContext(AuthContext)
     const navigate = useNavigate();
+    const location = useLocation();
     const [error, setError] = useState("")
+
+    const from = location.state?.from?.pathname || '/';
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -20,7 +23,7 @@ const SignIn = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 reset(),
-                navigate('/')
+                navigate(from, {replace: true})
                 Swal.fire({
                     title: 'Login Success',
                     text: 'User LoggedIn Successfully',

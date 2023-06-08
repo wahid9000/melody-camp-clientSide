@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
-    const {createUser, updateUserProfile } = useContext(AuthContext)
+    const {createUser, updateUserProfile, logOut } = useContext(AuthContext)
     const navigate = useNavigate();
 
     const { register, handleSubmit, watch, reset,  formState: { errors } } = useForm();
@@ -18,10 +18,11 @@ const SignUp = () => {
             console.log(loggedUser);
             updateUserProfile(data.name, data.photoURL),
             reset(),
-            navigate('/')
+            logOut();
+            navigate('/signIn')
             Swal.fire({
-                title: 'Welcome!',
-                text: 'User Registration Successful',
+                title: 'Please Login',
+                text: 'User Registration Successful. Please Login',
                 icon: 'success',
                 confirmButtonText: 'Continue'
               })
