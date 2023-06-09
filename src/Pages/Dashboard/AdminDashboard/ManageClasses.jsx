@@ -4,9 +4,12 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
+
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure();
     const { loading } = useContext(AuthContext)
+
+
 
     const { data: classes = [], refetch } = useQuery({
         queryKey: ['classes'],
@@ -110,7 +113,7 @@ const ManageClasses = () => {
                                                 <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn mb-1 btn-sm btn-success">Approve</button>
                                                 <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn btn-sm btn-success bg-red-700 text-white">Deny</button>
                                             </td>
-                                            <td><button disabled={singleClass.status === 'Approved' || singleClass.status === 'pending'} className="btn btn-info">Send Feedback</button></td>
+                                            <td><button onClick disabled={singleClass.status === 'Approved' || singleClass.status === 'pending'} className="btn btn-info">Send Feedback</button></td>
                                         </tr>)
                                 }
                             </tbody>
@@ -120,6 +123,7 @@ const ManageClasses = () => {
                     </div>
                 </div>
             </div>
+           
         </div>
     );
 };
