@@ -55,7 +55,7 @@ const SelectedClass = () => {
                         </thead>
                         <tbody className=" text-lg">
                             {
-                                selected.map((item, index) =>
+                                selected?.map((item, index) =>
                                     <tr key={item._id}>
                                         <td>{index + 1}</td>
                                         <td className="font-semibold">{item.class_name}</td>

@@ -27,8 +27,11 @@ const useAxiosSecure = () => {
                 await logOut()
                 navigate('/signIn')
             }
+            return Promise.reject(error);
         })
     } , [logOut, navigate, axiosSecure])
+
+    return [axiosSecure];
 }
 
 export default useAxiosSecure;

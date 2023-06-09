@@ -1,11 +1,11 @@
-import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
-import { AuthContext } from "../Providers/AuthProvider";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
-    const { user } = useContext(AuthContext)
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
 
     return (
@@ -22,31 +22,35 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-80 h-full bg-[#faf2de] text-base-content">
+                        {
+                            isAdmin ? (
+                                <div>
+                                    <li><h2 className="text-2xl font-bold mb-16">Admin Dashboard</h2></li>
+                                    <li><Link to='/dashboard/manageClasses' className="text-xl font-semibold">Manage Classes</Link></li>
+                                    <li><Link to='/dashboard/manageUsers' className="text-xl font-semibold">Manage Users</Link></li>
+                                    <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
+                                </div>
+                            ) : (
+                                isInstructor ? (
+                                    <div>
+                                        <li><h2 className="text-2xl font-bold mb-16">Instructor Dashboard</h2></li>
+                                        <li><Link to='/dashboard/addClass' className="text-xl font-semibold">Add A Class</Link></li>
+                                        <li><Link to='/dashboard/myClass' className="text-xl font-semibold">My Classes</Link></li>
+                                        <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <li><h2 className="text-2xl font-bold mb-16">Student Dashboard</h2></li>
+                                        <li><Link to='/dashboard/mySelectedClass' className="text-xl font-semibold">My Selected Class</Link></li>
+                                        <li><Link to='/dashboard/myEnrolledClass' className="text-xl font-semibold">My Enrolled Class</Link></li>
+                                        <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
+                                    </div>
+                                )
+                            )
 
-                    {
-                        isAdmin &&
-                        <ul className="menu p-4 w-80 h-full bg-[#faf2de] text-base-content">
-                            <div>
-                                <li><h2 className="text-2xl font-bold mb-16">Admin Dashboard</h2></li>
-                            </div>
-                            <li><Link to='/dashboard/manageClasses' className="text-2xl font-semibold">Manage Classes</Link></li>
-                            <li><Link to='/dashboard/manageUsers' className="text-2xl font-semibold">Manage Users</Link></li>
-                            <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
-                        </ul>
-                    }
-
-                    {
-                        user &&
-                        <ul className="menu p-4 w-80 h-full bg-[#faf2de] text-base-content">
-                            <div>
-                                <li><h2 className="text-2xl font-bold mb-16">Dashboard</h2></li>
-                            </div>
-                            <li><Link to='/dashboard/mySelectedClass' className="text-2xl font-semibold">My Selected Class</Link></li>
-                            <li><Link to='/dashboard/myEnrolledClass' className="text-2xl font-semibold">My Enrolled Class</Link></li>
-                            <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
-                        </ul>
-                    }
-
+                        }
+                    </ul>
 
 
                 </div>
