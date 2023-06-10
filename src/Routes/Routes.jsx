@@ -15,6 +15,7 @@ import MyClass from "../Pages/InstructorDashboard/MyClass";
 import SendFeedback from "../Pages/Dashboard/AdminDashboard/SendFeedback";
 import UpdateClass from "../Pages/InstructorDashboard/UpdateClass";
 import Payment from "../Pages/Dashboard/StudentDashboard/Payment";
+import PaymentHistory from "../Pages/Dashboard/StudentDashboard/PaymentHistory";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
                 path: 'payment/:id',
                 element: <Payment></Payment>,
                 loader: ({params})=> fetch(`http://localhost:5000/mySelectedClass/${params.id}`)
+            },
+            {
+                path:'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
             },
 
             //admin dashboard
