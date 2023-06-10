@@ -3,12 +3,12 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure();
     const { loading } = useContext(AuthContext)
-
 
 
     const { data: classes = [], refetch } = useQuery({
@@ -37,6 +37,10 @@ const ManageClasses = () => {
                 }
             })
     }
+
+ 
+
+
 
     const handleDeny = (id) => {
         Swal.fire({
@@ -67,6 +71,7 @@ const ManageClasses = () => {
             }
         })
     }
+
 
     return (
         <div>
@@ -107,13 +112,13 @@ const ManageClasses = () => {
                                             <td>{singleClass.instructor_name}</td>
                                             <td>{singleClass.instructor_email}</td>
                                             <td>{singleClass.available_seats}</td>
-                                            <td>{singleClass.price}</td>
+                                            <td>${singleClass.price}</td>
                                             <td>{singleClass.status}</td>
                                             <td>
                                                 <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn mb-1 btn-sm btn-success">Approve</button>
                                                 <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn btn-sm btn-success bg-red-700 text-white">Deny</button>
                                             </td>
-                                            <td><button onClick disabled={singleClass.status === 'Approved' || singleClass.status === 'pending'} className="btn btn-info">Send Feedback</button></td>
+                                            <td><Link to={`/dashboard/sendFeedback/${singleClass._id}`}><button disabled={singleClass.status === 'Approved' || singleClass.status === 'pending' || singleClass.feedback} className="btn btn-info">{singleClass.feedback ? 'Sent Successful' : 'Send Feedback'}</button></Link></td>
                                         </tr>)
                                 }
                             </tbody>

@@ -44,6 +44,7 @@ const Dashboard = () => {
                                         <li><h2 className="text-2xl font-bold mb-16">Student Dashboard</h2></li>
                                         <li><Link to='/dashboard/mySelectedClass' className="text-xl font-semibold">My Selected Class</Link></li>
                                         <li><Link to='/dashboard/myEnrolledClass' className="text-xl font-semibold">My Enrolled Class</Link></li>
+                                        <li><Link to='/dashboard/myEnrolledClass' className="text-xl font-semibold">My Payment History</Link></li>
                                         <li><Link to='/'><button className="btn btn-warning w-full bg-amber-300 mt-3">Return To Home</button></Link></li>
                                     </div>
                                 )

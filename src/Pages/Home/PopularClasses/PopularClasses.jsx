@@ -18,7 +18,7 @@ const PopularClasses = () => {
 
             <div className="grid md:grid-cols-3 gap-8">
                 {
-                    classes.map(singleClass => <PopularClassesCard
+                    classes.slice(0,6).map(singleClass => <PopularClassesCard
                         key={singleClass._id}
                         singleClass={singleClass}
                     ></PopularClassesCard>)
