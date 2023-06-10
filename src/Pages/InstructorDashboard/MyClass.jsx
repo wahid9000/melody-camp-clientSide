@@ -3,6 +3,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MyClass = () => {
     const { user, loading } = useContext(AuthContext)
@@ -23,7 +24,7 @@ const MyClass = () => {
         <div>
             <h2 className="text-3xl font-semibold">My Classes: {classes.length}</h2>
 
-            <div>
+            <div className="mt-12">
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
@@ -53,8 +54,8 @@ const MyClass = () => {
                                         <td>{singleClass.class_name}</td>
                                         <td></td>
                                         <td>{singleClass.status}</td>
-                                        <td><button className="btn btn-sm btn-success"><FaEdit className="text-red-600 text-xl"></FaEdit></button></td>
-                                        <td></td>
+                                        <td><Link to={`/dashboard/updateClass/${singleClass._id}`}><button className="btn btn-sm btn-success" disabled={singleClass.status === 'Denied'}><FaEdit className="text-red-600 text-xl"></FaEdit></button></Link> </td>
+                                        <td>{singleClass.feedback ? singleClass.feedback : 'Nothing to show!'}</td>
                                     </tr>)
                             }
                         </tbody>

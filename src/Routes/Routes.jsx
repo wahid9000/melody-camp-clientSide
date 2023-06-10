@@ -13,6 +13,7 @@ import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers";
 import AddClass from "../Pages/InstructorDashboard/AddClass";
 import MyClass from "../Pages/InstructorDashboard/MyClass";
 import SendFeedback from "../Pages/Dashboard/AdminDashboard/SendFeedback";
+import UpdateClass from "../Pages/InstructorDashboard/UpdateClass";
 
 const router = createBrowserRouter([
     {
@@ -80,6 +81,12 @@ const router = createBrowserRouter([
             {
                 path: 'myClass',
                 element: <MyClass></MyClass>
+            },
+            {
+                path: 'updateClass/:id',
+                element: <UpdateClass></UpdateClass>,
+                loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
+
             }
         ]
     }
