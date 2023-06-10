@@ -14,6 +14,7 @@ import AddClass from "../Pages/InstructorDashboard/AddClass";
 import MyClass from "../Pages/InstructorDashboard/MyClass";
 import SendFeedback from "../Pages/Dashboard/AdminDashboard/SendFeedback";
 import UpdateClass from "../Pages/InstructorDashboard/UpdateClass";
+import Payment from "../Pages/Dashboard/StudentDashboard/Payment";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: 'myEnrolledClass',
                 element: <EnrolledClass></EnrolledClass>
+            },
+            {
+                path: 'payment/:id',
+                element: <Payment></Payment>,
             },
 
             //admin dashboard
