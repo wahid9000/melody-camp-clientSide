@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext)
     const navigate = useNavigate()
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     const handleLogOut = () => {
         Swal.fire({
@@ -59,7 +63,7 @@ const NavBar = () => {
                     <li><Link to='/instructors'>Instructors</Link></li>
                     <li><Link to='/classes'>Classes</Link></li>
                     {
-                        user && <li><Link to='/dashboard/mySelectedClass'>Dashboard</Link></li>
+                        user && <li><Link to={isAdmin ? '/dashboard/manageClasses' : (isInstructor ? '/dashboard/addClass' : '/dashboard/mySelectedClass')}>Dashboard</Link></li>
                     }
                     {
                         user ?

@@ -3,7 +3,7 @@ import { FaAddressCard, FaMailchimp, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div>
+        <div className="mt-24">
             <footer className="footer p-10 bg-[#faf2de] text-base-content h-full md:h-64 items-center">
                 <div>
                     <Link to='/'>

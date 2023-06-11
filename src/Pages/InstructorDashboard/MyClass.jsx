@@ -52,10 +52,10 @@ const MyClass = () => {
                                             </div>
                                         </td>
                                         <td>{singleClass.class_name}</td>
-                                        <td></td>
+                                        <td>{singleClass.enrolledStudents}</td>
                                         <td>{singleClass.status}</td>
-                                        <td><Link to={`/dashboard/updateClass/${singleClass._id}`}><button className="btn btn-sm btn-success" disabled={singleClass.status === 'Denied'}><FaEdit className="text-red-600 text-xl"></FaEdit></button></Link> </td>
-                                        <td>{singleClass.feedback ? singleClass.feedback : 'Nothing to show!'}</td>
+                                        <td><Link to={`/dashboard/updateClass/${singleClass._id}`}><button className="btn btn-sm btn-success"><FaEdit className="text-red-600 text-xl"></FaEdit></button></Link> </td>
+                                        <td>{singleClass.feedback ? singleClass.feedback : 'Not Avilable!'}</td>
                                     </tr>)
                             }
                         </tbody>

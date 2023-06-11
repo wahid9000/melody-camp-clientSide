@@ -4,12 +4,20 @@ import PopularInstructorCard from "./PopularInstructorCard";
 
 const PopularInstructors = () => {
     const [instructors, setInstructors] = useState([])
-
+    console.log(instructors);
     useEffect(() => {
         fetch('http://localhost:5000/instructors')
             .then(res => res.json())
             .then(data => setInstructors(data))
     }, [])
+    
+    const [popularInstructors, setPopularInstructors] = useState([]);
+    useEffect( () => {
+        const popular = instructors.filter(i => i.role === 'instructor');
+        setPopularInstructors(popular);
+    } , [instructors])
+
+    
 
     return (
         <div>
@@ -20,7 +28,7 @@ const PopularInstructors = () => {
 
             <div className="grid md:grid-cols-3 gap-8">
                 {
-                    instructors.slice(0,6).map(instructor => <PopularInstructorCard
+                    popularInstructors.slice(0,6).map(instructor => <PopularInstructorCard
                         key={instructor._id}
                         instructor={instructor}
                     ></PopularInstructorCard>)

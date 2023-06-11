@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const image_hosting_token = import.meta.env.VITE_Image_upload_token;
@@ -12,8 +13,9 @@ const AddClass = () => {
     const {user} = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`
+    const navigate = useNavigate();
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         const formData = new FormData()
         console.log(data);
@@ -29,13 +31,14 @@ const AddClass = () => {
                 if (imgResponse.success) {
                     const imgUrl = imgResponse.data.display_url;
                     const { class_name, instructor_name, available_seats, instructor_email, price } = data;
-                    const classData = { class_name, instructor_name, available_seats:parseFloat(available_seats), instructor_email, price: parseFloat(price) , status:"pending",  class_image: imgUrl }
+                    const classData = { class_name, instructor_name, available_seats:parseFloat(available_seats), instructor_email, price: parseFloat(price) , status:"pending", enrolledStudents: 0,  class_image: imgUrl }
                     console.log(classData);
                     axiosSecure.post('/classes', classData)
                         .then(res => {
                             console.log(res.data);
                             if (res.data.insertedId) {
-                                // reset();
+                                reset();
+                                navigate('/dashboard/myClass')
                                 Swal.fire({
                                     title: 'Success!',
                                     text: 'Class Information Has Been Inserted',

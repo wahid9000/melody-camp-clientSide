@@ -18,7 +18,7 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL);
-                const saveUser = { name: data.name, email: data.email };
+                const saveUser = { name: data.name, email: data.email, photoURL: data.photoURL };
                 axios.post('http://localhost:5000/users', saveUser)
                     .then(res => {
                         console.log(res.data);

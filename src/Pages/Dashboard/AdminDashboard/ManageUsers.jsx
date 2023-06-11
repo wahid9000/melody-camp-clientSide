@@ -41,7 +41,7 @@ const ManageUsers = () => {
                     refetch();
                     Swal.fire({
                         title: 'Success!',
-                        text: 'User has been Made Admin',
+                        text: 'User has been Made Instructor',
                         icon: 'success',
                         confirmButtonText: 'Continue'
                     })
