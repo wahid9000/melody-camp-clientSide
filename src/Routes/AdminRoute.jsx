@@ -11,7 +11,7 @@ const AdminRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading || isAdminLoading) {
-        <span className="loading loading-spinner loading-lg"></span>
+        return <span className=" flex justify-center items-center mx-auto mt-[20%] loading loading-spinner loading-5xl"></span>
     }
 
     if (user && isAdmin) {
@@ -26,7 +26,7 @@ const AdminRoute = ({ children }) => {
             confirmButtonText: 'Continue'
         }),
         <div>
-            <Navigate to="/signIn" state={{from: location}}></Navigate>
+            <Navigate to="/signIn" state={{from: location}} replace></Navigate>
         </div>
             
             

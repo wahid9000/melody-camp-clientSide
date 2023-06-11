@@ -11,7 +11,7 @@ const InstructorRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading || isInstructorLoading) {
-        <span className="loading loading-spinner loading-lg"></span>
+        return <span className=" flex justify-center items-center mx-auto mt-[20%] loading loading-spinner loading-lg"></span>
     }
 
     if (user && isInstructor) {
@@ -26,7 +26,7 @@ const InstructorRoute = ({ children }) => {
             confirmButtonText: 'Continue'
         }),
         <div>
-            <Navigate to="/signIn" state={{from: location}}></Navigate>
+            <Navigate to="/signIn" state={{from: location}} replace></Navigate>
         </div>
             
             

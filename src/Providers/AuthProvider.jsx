@@ -1,27 +1,23 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import app from "../firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import axios from "axios";
+import app from "../firebase/firebase.config";
+
+
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const googleProvider = new GoogleAuthProvider();
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const googleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const updateUserProfile = (name, photoURL) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: photoURL
-        })
-    }
 
     const loginUser = (email, password) => {
         setLoading(true);
@@ -37,6 +33,14 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
+
+    const updateUserProfile = (name, photoURL) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL
+        })
+    }
+
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -55,18 +59,19 @@ const AuthProvider = ({ children }) => {
 
         })
         return () => {
-            return unsubscribe;
+            return unsubscribe();
         }
     }, [])
 
     const authInfo = {
         user,
+        loading,
         createUser,
         loginUser,
         logOut,
         googleLogin,
         updateUserProfile,
-        loading
+
     }
 
 

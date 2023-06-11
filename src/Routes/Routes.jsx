@@ -16,6 +16,9 @@ import SendFeedback from "../Pages/Dashboard/AdminDashboard/SendFeedback";
 import UpdateClass from "../Pages/InstructorDashboard/UpdateClass";
 import Payment from "../Pages/Dashboard/StudentDashboard/Payment";
 import PaymentHistory from "../Pages/Dashboard/StudentDashboard/PaymentHistory";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 const router = createBrowserRouter([
     {
@@ -47,36 +50,36 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
 
         children: [
             //users dashboard
             {
                 path: 'mySelectedClass',
-                element: <SelectedClass></SelectedClass>
+                element: <PrivateRoute><SelectedClass></SelectedClass></PrivateRoute>
             },
             {
                 path: 'myEnrolledClass',
-                element: <EnrolledClass></EnrolledClass>
+                element: <PrivateRoute><EnrolledClass></EnrolledClass></PrivateRoute>
             },
             {
                 path: 'payment/:id',
-                element: <Payment></Payment>,
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/mySelectedClass/${params.id}`)
             },
             {
                 path:'paymentHistory',
-                element: <PaymentHistory></PaymentHistory>
+                element: <PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
             },
 
             //admin dashboard
             {
                 path: 'manageClasses',
-                element: <ManageClasses></ManageClasses>
+                element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             },
             {
                 path: 'manageUsers',
-                element: <ManageUsers></ManageUsers>
+                element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             {
                 path: 'sendFeedback/:id',
@@ -87,15 +90,15 @@ const router = createBrowserRouter([
             //instructor dashboard
             {
                 path: 'addClass',
-                element:<AddClass></AddClass>
+                element:<InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
                 path: 'myClass',
-                element: <MyClass></MyClass>
+                element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
             },
             {
                 path: 'updateClass/:id',
-                element: <UpdateClass></UpdateClass>,
+                element: <InstructorRoute><UpdateClass></UpdateClass></InstructorRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
 
             }
