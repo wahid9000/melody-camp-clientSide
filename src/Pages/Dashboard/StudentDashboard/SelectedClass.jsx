@@ -37,21 +37,22 @@ const SelectedClass = () => {
     }
 
     return (
-        <div className="mt-12">
-            <h2 className="text-3xl font-semibold">My Selected Classes: {selected.length}</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">My Selected Classes: {selected.length}</h2>
+            <div className="divider"></div>
 
             <div className="mt-10">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
 
-                        <thead className=" text-lg">
+                        <thead className=" text-lg text-white">
                             <tr>
-                                <th className="bg-[#faf2de]">#</th>
-                                <th className="bg-[#faf2de]">Class Name</th>
-                                <th className="bg-[#faf2de]">Price</th>
-                                <th className="bg-[#faf2de]">Instructor Name</th>
-                                <th className="bg-[#faf2de]">Actions</th>
-                                <th className="bg-[#faf2de]">Make Payment</th>
+                                <th className="bg-[#1b2065]">#</th>
+                                <th className="bg-[#1b2065]">Class Name</th>
+                                <th className="bg-[#1b2065]">Price</th>
+                                <th className="bg-[#1b2065]">Instructor Name</th>
+                                <th className="bg-[#1b2065]">Actions</th>
+                                <th className="bg-[#1b2065]">Make Payment</th>
                             </tr>
                         </thead>
                         <tbody className=" text-lg">
@@ -62,8 +63,10 @@ const SelectedClass = () => {
                                         <td className="font-semibold">{item.class_name}</td>
                                         <td>${item.price}</td>
                                         <td>{item.instructor_name}</td>
-                                        <td><button onClick={() => handleDelete(item._id)} className="btn hover:bg-black bg-red-700 btn-sm text-white">Delete</button></td>
-                                        <td><Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-warning btn-sm bg-amber-300">Pay</button></Link></td>
+                                        <td><button onClick={() => handleDelete(item._id)}  type="button" className="rounded-md border bg-[#b90a0a] bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">Delete</button></td>
+                                        <td><Link to={`/dashboard/payment/${item._id}`}><button
+                                            type="button" className="rounded-md bg-slate-950 border bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                        >Make Payment</button></Link></td>
                                     </tr>)
                             }
 

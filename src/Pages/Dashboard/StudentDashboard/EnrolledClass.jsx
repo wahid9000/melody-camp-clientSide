@@ -22,20 +22,21 @@ const EnrolledClass = () => {
     return (
         <div>
             <div>
-                <div className="mt-12">
-                    <h2 className="text-3xl font-semibold">My Enrolled Classes</h2>
+                <div className="mt-3">
+                    <h2 className="text-3xl font-semibold mb-5">My Enrolled Classes</h2>
+                    <div className="divider"></div> 
 
                     <div className="mt-10">
                         <div className="overflow-x-auto">
                     
                                 <table className="table table-zebra">
 
-                                <thead>
+                                <thead className="text-lg text-white">
                                     <tr>
-                                        <th className="bg-[#faf2de] text-lg">#</th>
-                                        <th className="bg-[#faf2de] text-lg">Class Name</th>
-                                        <th className="bg-[#faf2de] text-lg">Instructor Name</th>
-                                        <th className="bg-[#faf2de] text-lg">Date of Enrollment</th>
+                                        <th className="bg-[#1b2065]">#</th>
+                                        <th className="bg-[#1b2065]">Class Name</th>
+                                        <th className="bg-[#1b2065]">Instructor Name</th>
+                                        <th className="bg-[#1b2065]">Date of Enrollment</th>
                                     </tr>
                                 </thead>
                                 <tbody className=" text-lg">

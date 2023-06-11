@@ -70,26 +70,26 @@ const ManageClasses = () => {
 
 
     return (
-        <div>
-            <h2 className="text-3xl font-semibold">Manage Classes: {manageClasses.length}</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">Manage Classes: {manageClasses.length}</h2>
+            <div className="divider"></div>
 
             <div>
-                <div>
+                <div className="mt-10">
                     <div className="overflow-x-auto">
                         <table className="table">
-                            {/* head */}
-                            <thead>
+                            <thead className=" text-lg text-white">
                                 <tr>
-                                    <th>#</th>
-                                    <th>Class Image</th>
-                                    <th>Class Name</th>
-                                    <th>Instructor Name</th>
-                                    <th>Instructor Email</th>
-                                    <th>Available Seats</th>
-                                    <th>Price</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                    <th>Send Feedback</th>
+                                    <th className="bg-[#1b2065]">#</th>
+                                    <th className="bg-[#1b2065]">Class Image</th>
+                                    <th className="bg-[#1b2065]">Class Name</th>
+                                    <th className="bg-[#1b2065]">Instructor Name</th>
+                                    <th className="bg-[#1b2065]">Instructor Email</th>
+                                    <th className="bg-[#1b2065]">Available Seats</th>
+                                    <th className="bg-[#1b2065]">Price</th>
+                                    <th className="bg-[#1b2065]">Status</th>
+                                    <th className="bg-[#1b2065]">Action</th>
+                                    <th className="bg-[#1b2065]">Send Feedback</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -111,10 +111,12 @@ const ManageClasses = () => {
                                             <td>${singleClass.price}</td>
                                             <td>{singleClass.status}</td>
                                             <td>
-                                                <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn mb-1 btn-sm btn-success">Approve</button>
-                                                <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn btn-sm btn-success bg-red-700 text-white">Deny</button>
+                                                <div className="flex flex-col">
+                                                    <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} type="button" className="rounded-md bg-slate-950 border bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Approve</button>
+                                                    <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} type="button" className="rounded-md border bg-[#b90a0a] bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">Deny</button>
+                                                </div>
                                             </td>
-                                            <td><Link to={`/dashboard/sendFeedback/${singleClass._id}`}><button disabled={singleClass.status === 'Approved' || singleClass.status === 'pending' || singleClass.feedback} className="btn btn-info">{singleClass.feedback ? 'Sent Successful' : 'Send Feedback'}</button></Link></td>
+                                            <td><Link to={`/dashboard/sendFeedback/${singleClass._id}`}><button disabled={singleClass.status === 'Approved' || singleClass.status === 'pending' || singleClass.feedback} type="button" className="btn capitalize rounded-md border bg-[#0a21b9] bg-opacity-80 px-4 hover:bg-[#1c278b]   text-sm font-medium text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">{singleClass.feedback ? 'Sent Successful' : 'Send Feedback'}</button></Link></td>
                                         </tr>)
                                 }
                             </tbody>
@@ -124,7 +126,7 @@ const ManageClasses = () => {
                     </div>
                 </div>
             </div>
-           
+
         </div>
     );
 };

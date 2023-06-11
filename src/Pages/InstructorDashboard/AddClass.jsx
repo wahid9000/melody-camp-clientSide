@@ -53,8 +53,9 @@ const AddClass = () => {
 
 
     return (
-        <div>
-            <h2 className="text-3xl font-semibold">Add A Class</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">Add A Class</h2>
+            <div className="divider"></div>
 
             <div>
                 <form className="space-y-5 mt-12" onSubmit={handleSubmit(onSubmit)}>
@@ -98,7 +99,7 @@ const AddClass = () => {
                     </div>
 
                    <div className="w-11/12 mx-auto">
-                   <input className="btn btn-warning w-full bg-amber-300" type="submit" />
+                   <input className="btn btn-block btn-primary bg-[#1b2065] text-white" type="submit" value={"Add  Class"} />
                    </div>
                 </form>
             </div>

@@ -10,9 +10,10 @@ const Payment = () => {
     const selectedClass = useLoaderData();
 
     return (
-        <div>
-            <h2 className="text-3xl">Make Payment</h2>
-            <div className="mx-auto mt-40 w-1/2">
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">Make Payment</h2>
+            <div className="divider"></div>
+            <div className=" mt-10 w-1/2">
                 <Elements stripe={stripePromise}>
                     <CheckoutForm classes={selectedClass}></CheckoutForm>
                 </Elements>

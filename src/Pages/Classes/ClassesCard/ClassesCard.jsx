@@ -23,6 +23,7 @@ const ClassesCard = ({ singleClass }) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertedId) {
+                        navigate('/dashboard/mySelectedClass')
                         Swal.fire({
                             title: 'Class Selection Successful',
                             text: "Please Visit Your Dashboard's My Selected Class",

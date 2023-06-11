@@ -51,8 +51,9 @@ const UpdateClass = () => {
 
 
     return (
-        <div>
-            <h2 className="text-3xl font-bold">Update Class: {classes.class_name}</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">Update Class: {classes.class_name}</h2>
+            <div className="divider"></div>
 
             <form className="space-y-5 mt-12" onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid md:grid-cols-2 gap-6 mx-auto w-11/12">
@@ -83,7 +84,7 @@ const UpdateClass = () => {
                 </div>
 
                 <div className="w-11/12 mx-auto">
-                    <input className="btn btn-warning w-full bg-amber-300" type="submit" />
+                <input className="btn btn-block btn-primary bg-[#1b2065] text-white" value={'Update'} type="submit" />
                 </div>
             </form>
         </div>

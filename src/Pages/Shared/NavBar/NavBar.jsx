@@ -6,6 +6,7 @@ import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
 import { useState } from "react";
 import { useEffect } from "react";
+import ActiveLink from "../../../Components/ActiveLink/ActiveLink";
 
 const NavBar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
@@ -63,11 +64,11 @@ const NavBar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white mt-3 p-2 shadow z-40 rounded-box w-52">
-                        <li><Link>Home</Link></li>
-                        <li><Link to='/instructors'>Instructors</Link></li>
-                        <li><Link>Classes</Link></li>
+                        <li><ActiveLink>Home</ActiveLink></li>
+                        <li><ActiveLink to='/instructors'>Instructors</ActiveLink></li>
+                        <li><ActiveLink>Classes</ActiveLink></li>
                         {
-                            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+                            user && <li><ActiveLink to='/dashboard'>Dashboard</ActiveLink></li>
                         }
                         {
                             user &&
@@ -75,15 +76,15 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <img src="logo.png" className="w-64" alt="" />
+                <Link><img src="logo.png" className="w-64" alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl font-semibold">
-                    <li><Link>Home</Link></li>
-                    <li><Link to='/instructors'>Instructors</Link></li>
-                    <li><Link to='/classes'>Classes</Link></li>
+                    <li><ActiveLink to='/'>Home</ActiveLink></li>
+                    <li><ActiveLink to='/instructors'>Instructors</ActiveLink></li>
+                    <li><ActiveLink to='/classes'>Classes</ActiveLink></li>
                     {
-                        user && <li><Link to={isAdmin ? '/dashboard/manageClasses' : (isInstructor ? '/dashboard/addClass' : '/dashboard/mySelectedClass')}>Dashboard</Link></li>
+                        user && <li><ActiveLink to={isAdmin ? '/dashboard/manageClasses' : (isInstructor ? '/dashboard/addClass' : '/dashboard/mySelectedClass')}>Dashboard</ActiveLink></li>
                     }
 
                 </ul>
@@ -113,7 +114,7 @@ const NavBar = () => {
                         </div>
 
                         :
-                        <Link to='/signIn'><button className="btn font-bold btn-warning bg-amber-300">Sign In</button></Link>
+                        <ActiveLink to='/signIn'><button className="btn font-bold btn-warning bg-amber-300">Sign In</button></ActiveLink>
                 }
 
             </div>

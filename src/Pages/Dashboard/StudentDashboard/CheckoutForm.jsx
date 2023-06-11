@@ -112,7 +112,7 @@ const CheckoutForm = ({ classes }) => {
                         style: {
                             base: {
                                 fontSize: '18px',
-                                color: '#424770',
+                                color: '#ffffff',
                                 '::placeholder': {
                                     color: '#808080',
                                 },
@@ -124,8 +124,8 @@ const CheckoutForm = ({ classes }) => {
                     }}
                 />
                 <div className="text-center">
-                    <button className="btn btn-warning btn-sm" type="submit" disabled={!stripe || !clientSecret || processing}>
-                        Pay
+                    <button className="btn btn-primary bg-blue-950 text-[#ffffff]" type="submit" disabled={!stripe || !clientSecret || processing}>
+                        Make Your Payment
                     </button>
                 </div>
             </form>

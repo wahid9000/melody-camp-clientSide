@@ -21,20 +21,21 @@ const PaymentHistory = () => {
     return (
         <div>
             <div>
-                <div className="mt-12">
-                    <h2 className="text-3xl font-semibold">My Payment History</h2>
+                <div className="mt-3">
+                    <h2 className="text-3xl font-semibold mb-5">My Payment History</h2>
+                    <div className="divider"></div> 
 
                     <div className="mt-10">
                         <div className="overflow-x-auto">
                             <table className="table table-zebra">
 
-                                <thead className=" text-lg">
+                                <thead className="text-white text-lg">
                                     <tr>
-                                        <th className="bg-[#faf2de]">#</th>
-                                        <th className="bg-[#faf2de]">Date</th>
-                                        <th className="bg-[#faf2de]">Class Name</th>
-                                        <th className="bg-[#faf2de]">Price</th>
-                                        <th className="bg-[#faf2de]">Transaction ID</th>
+                                        <th className="bg-[#1b2065]">#</th>
+                                        <th className="bg-[#1b2065]">Date</th>
+                                        <th className="bg-[#1b2065]">Class Name</th>
+                                        <th className="bg-[#1b2065]">Price</th>
+                                        <th className="bg-[#1b2065]">Transaction ID</th>
                                         
                                         
                             

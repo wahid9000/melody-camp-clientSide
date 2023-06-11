@@ -28,7 +28,7 @@ button:hover {
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
     rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   border-radius: 4px;
-  background: rgb(235, 243, 175);
+  background: rgb(15, 26, 87);
 }
 
 .StripeElement--focus,
@@ -40,6 +40,7 @@ button:hover {
     rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
   -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
+  color: white;
 }
 
 .StripeElement.loading {

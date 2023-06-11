@@ -21,22 +21,23 @@ const MyClass = () => {
 
 
     return (
-        <div>
-            <h2 className="text-3xl font-semibold">My Classes: {classes.length}</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">My Classes: {classes.length}</h2>
+            <div className="divider"></div>
 
-            <div className="mt-12">
+            <div className="mt-10">
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className=" text-lg text-white">
                             <tr>
-                                <th>#</th>
-                                <th>Class Image</th>
-                                <th>Class Name</th>
-                                <th>Total Enrolled</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                                <th>Feedback</th>
+                                <th className="bg-[#1b2065]">#</th>
+                                <th className="bg-[#1b2065]">Class Image</th>
+                                <th className="bg-[#1b2065]">Class Name</th>
+                                <th className="bg-[#1b2065]">Total Enrolled</th>
+                                <th className="bg-[#1b2065]">Status</th>
+                                <th className="bg-[#1b2065]">Action</th>
+                                <th className="bg-[#1b2065]">Feedback</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,9 +54,9 @@ const MyClass = () => {
                                         </td>
                                         <td>{singleClass.class_name}</td>
                                         <td>{singleClass.enrolledStudents}</td>
-                                        <td>{singleClass.status}</td>
-                                        <td><Link to={`/dashboard/updateClass/${singleClass._id}`}><button className="btn btn-sm btn-success"><FaEdit className="text-red-600 text-xl"></FaEdit></button></Link> </td>
-                                        <td>{singleClass.feedback ? singleClass.feedback : 'Not Avilable!'}</td>
+                                        <td className="text-red-600">{singleClass.status}</td>
+                                        <td><Link to={`/dashboard/updateClass/${singleClass._id}`}><button className="btn btn-primary bg-[#0f2a2d]"><FaEdit className="text-white text-xl"></FaEdit></button></Link> </td>
+                                        <td>{singleClass.feedback ? singleClass.feedback : 'Nothing!'}</td>
                                     </tr>)
                             }
                         </tbody>
