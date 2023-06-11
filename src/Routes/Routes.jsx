@@ -19,11 +19,14 @@ import PaymentHistory from "../Pages/Dashboard/StudentDashboard/PaymentHistory";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element:<Main></Main>,
+
+        errorElement: <ErrorPage></ErrorPage>,
 
         children: [
             {
