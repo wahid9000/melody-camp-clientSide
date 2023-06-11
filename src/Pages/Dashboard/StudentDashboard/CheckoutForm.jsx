@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 import './CheckoutForm.css'
+import moment from "moment/moment";
 
 const CheckoutForm = ({ classes }) => {
     const {class_name, price, _id, classId, instructor_name } = classes;
@@ -83,7 +84,7 @@ const CheckoutForm = ({ classes }) => {
                 instructor_name,
                 selectedClassId: _id,
                 classId,
-                date: new Date().toISOString().slice(0, 10)
+                date: moment(new Date().toISOString()).format('MMMM Do YYYY, h:mm:ss a')
             }
             axiosSecure.post('/payments', payment)
             .then(res => {
