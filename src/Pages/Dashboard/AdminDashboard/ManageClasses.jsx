@@ -11,17 +11,17 @@ const ManageClasses = () => {
     const { loading } = useContext(AuthContext)
 
 
-    const { data: classes = [], refetch } = useQuery({
-        queryKey: ['classes'],
+    const { data: manageClasses = [], refetch } = useQuery({
+        queryKey: ['manageClasses'],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axiosSecure.get('http://localhost:5000/classes')
+            const res = await axiosSecure.get('/admin/manageClasses')
             return res.data;
         }
     })
 
     const handleApprove = (id) => {
-        fetch(`http://localhost:5000/classes/approve/${id}`, {
+        fetch(`http://localhost:5000/admin/manageClasses/approve/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -38,10 +38,6 @@ const ManageClasses = () => {
             })
     }
 
- 
-
-
-
     const handleDeny = (id) => {
         Swal.fire({
             title: 'Update Status to Denied?',
@@ -53,7 +49,7 @@ const ManageClasses = () => {
             confirmButtonText: 'Yes, Deny it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/deny/${id}`, {
+                fetch(`http://localhost:5000/admin/manageClasses/deny/${id}`, {
                     method: "PATCH"
                 })
                     .then(res => res.json())
@@ -75,7 +71,7 @@ const ManageClasses = () => {
 
     return (
         <div>
-            <h2 className="text-3xl font-semibold">Manage Classes: {classes.length}</h2>
+            <h2 className="text-3xl font-semibold">Manage Classes: {manageClasses.length}</h2>
 
             <div>
                 <div>
@@ -98,7 +94,7 @@ const ManageClasses = () => {
                             </thead>
                             <tbody>
                                 {
-                                    classes.map((singleClass, index) =>
+                                    manageClasses.map((singleClass, index) =>
                                         <tr key={singleClass._id}>
                                             <td>{index + 1}</td>
                                             <td>

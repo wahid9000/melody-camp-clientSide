@@ -11,7 +11,7 @@ const SendFeedback = () => {
         const feedback = form.feedback.value;
         const adminFeedback = {feedback};
 
-        fetch(`http://localhost:5000/classes/feedback/${classes._id}`, {
+        fetch(`http://localhost:5000/admin/manageClasses/feedback/${classes._id}`, {
             method: "PATCH",
             headers: {
                 "content-type" : "application/json",

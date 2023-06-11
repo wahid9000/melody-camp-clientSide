@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 import './CheckoutForm.css'
 import moment from "moment/moment";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ classes }) => {
     const {class_name, price, _id, classId, instructor_name } = classes;
@@ -19,6 +20,7 @@ const CheckoutForm = ({ classes }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState('')
+    const navigate = useNavigate();
 
     useEffect(() => {
         axiosSecure.post('/create-payment-intent', { price })
@@ -90,6 +92,7 @@ const CheckoutForm = ({ classes }) => {
             .then(res => {
                 console.log(res.data);
                 if(res.data.insertResult.insertedId){
+                    navigate('/dashboard/myEnrolledClass')
                     Swal.fire({
                         title: 'Payment Successful',
                         text: 'Thanks For Enrolling To Our Class',
