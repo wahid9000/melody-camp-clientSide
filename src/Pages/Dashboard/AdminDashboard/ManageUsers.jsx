@@ -14,7 +14,7 @@ const ManageUsers = () => {
     })
 
     const handleMakeAdmin = (id) => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://musical-server.vercel.app/users/admin/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageUsers = () => {
     }
 
     const handleMakeInstructor = (id) => {
-        fetch(`http://localhost:5000/users/instructor/${id}`, {
+        fetch(`https://musical-server.vercel.app/users/instructor/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())

@@ -21,7 +21,7 @@ const ManageClasses = () => {
     })
 
     const handleApprove = (id) => {
-        fetch(`http://localhost:5000/admin/manageClasses/approve/${id}`, {
+        fetch(`https://musical-server.vercel.app/admin/manageClasses/approve/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -49,7 +49,7 @@ const ManageClasses = () => {
             confirmButtonText: 'Yes, Deny it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/admin/manageClasses/deny/${id}`, {
+                fetch(`https://musical-server.vercel.app/admin/manageClasses/deny/${id}`, {
                     method: "PATCH"
                 })
                     .then(res => res.json())

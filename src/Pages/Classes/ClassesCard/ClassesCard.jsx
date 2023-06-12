@@ -19,7 +19,7 @@ const ClassesCard = ({ singleClass }) => {
         if (user && user.email) {
             const classElements = { classId: _id, class_name, email: user.email, price, instructor_name }
             console.log(classElements);
-            axios.post('http://localhost:5000/mySelectedClass', classElements)
+            axios.post('https://musical-server.vercel.app/mySelectedClass', classElements)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertedId) {

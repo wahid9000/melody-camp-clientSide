@@ -8,7 +8,7 @@ const InstructorsSection = () => {
     const [instructors, setInstructors] = useState([])
     console.log(instructors);
     useEffect(() => {
-        fetch('http://localhost:5000/instructors')
+        fetch('https://musical-server.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setInstructors(data))
     }, [])

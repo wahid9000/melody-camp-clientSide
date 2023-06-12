@@ -22,7 +22,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL);
                 const saveUser = { name: data.name, email: data.email, photoURL: data.photoURL };
-                axios.post('http://localhost:5000/users', saveUser)
+                axios.post('https://musical-server.vercel.app/users', saveUser)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.insertedId) {

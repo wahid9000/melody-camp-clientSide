@@ -17,7 +17,7 @@ const Reviews = () => {
 
     const [reviews, setReviews] = useState([])
     const fetchedData = async () => {
-        const res = await fetch('http://localhost:5000/reviews')
+        const res = await fetch('https://musical-server.vercel.app/reviews')
         const data = await res.json()
         setReviews(data)
     }

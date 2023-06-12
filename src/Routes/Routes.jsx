@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/mySelectedClass/${params.id}`)
+                loader: ({params})=> fetch(`https://musical-server.vercel.app/mySelectedClass/${params.id}`)
             },
             {
                 path:'paymentHistory',
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
             {
                 path: 'sendFeedback/:id',
                 element: <SendFeedback></SendFeedback>,
-                loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
+                loader: ({params})=> fetch(`https://musical-server.vercel.app/classes/${params.id}`)
             },
 
             //instructor dashboard
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateClass/:id',
                 element: <InstructorRoute><UpdateClass></UpdateClass></InstructorRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/classes/${params.id}`)
+                loader: ({params})=> fetch(`https://musical-server.vercel.app/classes/${params.id}`)
 
             }
         ]

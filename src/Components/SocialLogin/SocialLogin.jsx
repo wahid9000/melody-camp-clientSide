@@ -18,7 +18,7 @@ const SocialLogin = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 const saveUser = { name: loggedUser.displayName, email: loggedUser.email, photoURL: loggedUser.photoURL };
-                axios.post('http://localhost:5000/users', saveUser)
+                axios.post('https://musical-server.vercel.app/users', saveUser)
                     .then(res => {
                         console.log(res.data);
                         navigate(from, { replace: true })

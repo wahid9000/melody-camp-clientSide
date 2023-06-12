@@ -4,7 +4,7 @@ import ClassesCard from "../ClassesCard/ClassesCard";
 
 const ClassesSection = () => {
     const fetchedData = async() => {
-        const res = await fetch('http://localhost:5000/classes')
+        const res = await fetch('https://musical-server.vercel.app/classes')
         const data = await res.json();
         setClasses(data);
     }
