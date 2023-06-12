@@ -50,20 +50,21 @@ const ManageUsers = () => {
     }
 
     return (
-        <div>
-            <h2 className="text-4xl font-semibold">Total users: {users.length}</h2>
+        <div className="mt-3">
+            <h2 className="text-3xl font-semibold mb-5">Manage Users: {users.length}</h2>
+            <div className="divider"></div>
 
-            <div className="mt-12">
+            <div className="mt-10">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
 
-                        <thead>
+                        <thead className="text-lg text-white">
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Action</th>
-                                <th>Action</th>
+                                <th className="bg-[#1b2065]">#</th>
+                                <th className="bg-[#1b2065]">Name</th>
+                                <th className="bg-[#1b2065]">Email</th>
+                                <th className="bg-[#1b2065]">Action</th>
+                                <th className="bg-[#1b2065]">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,8 +75,8 @@ const ManageUsers = () => {
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
 
-                                        <td> {user?.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user._id)} className="btn btn-success btn-sm">Make Admin</button>}</td>
-                                        <td>{user?.role === 'instructor' ? 'Instructor' : <button onClick={() => handleMakeInstructor(user._id)} className="btn btn-warning bg-amber-300 btn-sm">Make Instructor</button>} </td>
+                                        <td> {user?.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user._id)} className="btn capitalize rounded-md bg-[#113d23] border bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-[#35b46a] ">Make Admin</button>}</td>
+                                        <td>{user?.role === 'instructor' ? 'Instructor' : <button onClick={() => handleMakeInstructor(user._id)} className="btn capitalize rounded-md bg-[#771867] border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#d13ab8] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Make Instructor</button>} </td>
                                     </tr>)
                             }
                             <tr>

@@ -15,7 +15,7 @@ const Banner = () => {
                 buttons={true}
                 bullets={false}
                 cancelOnInteraction={false} // should stop playing on user interaction
-                interval={4000}
+                interval={9000}
             >
                 <div className='bg-gradient-to-r from-green-950 to-black '>
                     <div className="relative opacity-30">
@@ -23,8 +23,11 @@ const Banner = () => {
                     </div>
                     <div className='absolute top-[20%] lg:top-[25%] text-white font-semi '>
                         <div className='flex justify-center items-center'>
-                            <h2 className='mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the strongest form of magic.."}</h2>
+                   
+                                <h2 className='mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the strongest form of magic.."}</h2>
+                       
                         </div>
+
                         <div className='text-center mt-4  md:mt-10'>
                             <Link to='/classes'><button className='btn btn-warning font-bold bg-amber-300'>See Our Classes</button></Link>
                         </div>

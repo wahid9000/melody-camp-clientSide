@@ -78,7 +78,7 @@ const ManageClasses = () => {
                 <div className="mt-10">
                     <div className="overflow-x-auto">
                         <table className="table">
-                            <thead className=" text-lg text-white">
+                            <thead className="text-lg text-white">
                                 <tr>
                                     <th className="bg-[#1b2065]">#</th>
                                     <th className="bg-[#1b2065]">Class Image</th>
@@ -111,9 +111,9 @@ const ManageClasses = () => {
                                             <td>${singleClass.price}</td>
                                             <td>{singleClass.status}</td>
                                             <td>
-                                                <div className="flex flex-col">
-                                                    <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} type="button" className="rounded-md bg-slate-950 border bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Approve</button>
-                                                    <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} type="button" className="rounded-md border bg-[#b90a0a] bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">Deny</button>
+                                                <div className="flex flex-col gap-1">
+                                                    <button onClick={() => handleApprove(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn capitalize rounded-md bg-orange-500 border bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Approve</button>
+                                                    <button onClick={() => handleDeny(singleClass._id)} disabled={singleClass.status === 'Approved' || singleClass.status === 'Denied'} className="btn capitalize rounded-md border bg-[#b90a0a] bg-opacity-80 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">Deny</button>
                                                 </div>
                                             </td>
                                             <td><Link to={`/dashboard/sendFeedback/${singleClass._id}`}><button disabled={singleClass.status === 'Approved' || singleClass.status === 'pending' || singleClass.feedback} type="button" className="btn capitalize rounded-md border bg-[#0a21b9] bg-opacity-80 px-4 hover:bg-[#1c278b]   text-sm font-medium text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75">{singleClass.feedback ? 'Sent Successful' : 'Send Feedback'}</button></Link></td>

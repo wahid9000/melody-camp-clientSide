@@ -3,13 +3,17 @@ import { useState } from "react";
 import ClassesCard from "../ClassesCard/ClassesCard";
 
 const ClassesSection = () => {
+    const fetchedData = async() => {
+        const res = await fetch('http://localhost:5000/classes')
+        const data = await res.json();
+        setClasses(data);
+    }
 
     const [classes, setClasses] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/classes')
-            .then(res => res.json())
-            .then(data => setClasses(data))
-    }, [])
+    useEffect( () => {
+        fetchedData();
+    } , [])
+   
 
     const [approvedClasses, setApprovedClasses] = useState([])
     useEffect( () => {
@@ -17,7 +21,7 @@ const ClassesSection = () => {
         setApprovedClasses(approved)
     } , [classes])
     console.log(approvedClasses);
-
+    
     return (
         <div className="grid md:grid-cols-2 gap-3">
             {

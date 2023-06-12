@@ -26,7 +26,7 @@ const ClassesCard = ({ singleClass }) => {
                         navigate('/dashboard/mySelectedClass')
                         Swal.fire({
                             title: 'Class Selection Successful',
-                            text: "Please Visit Your Dashboard's My Selected Class",
+                            text: "You must Make Payment To Get Enrolled",
                             icon: 'success',
                             confirmButtonText: 'Continue'
                         })
@@ -46,47 +46,52 @@ const ClassesCard = ({ singleClass }) => {
 
 
     return (
-        <div className={available_seats === 0 ? "border py-8 px-2 md:flex justify-center items-center gap-5 group bg-red-300" : "border py-8 px-2 md:flex justify-center items-center gap-5 group "}>
-            <div className="mb-8">
-                <img src={class_image} className="w-56 mx-auto rounded-xl group-hover:scale-110 transition" alt="" />
-            </div>
-            <div>
-                <h2 className="font-bold text-xl">Details</h2>
+        <div>
+            
+                <div className={available_seats === 0 ? "border py-8 px-2 md:flex justify-center items-center gap-5 group bg-red-300" : "border py-8 px-2 md:flex justify-center items-center gap-5 group "}>
+                    <div className="mb-8">
+                        <img src={class_image} className="w-56 mx-auto rounded-xl group-hover:scale-110 transition" alt="" />
+                    </div>
+                    <div>
+                        <h2 className="font-bold text-xl">Details</h2>
 
-                <div className="divider w-40"></div>
+                        <div className="divider w-40"></div>
 
-                <div className="flex justify-between items-center  gap-3">
-                    <label>Name:</label>
-                    <p className="font-semibold">{class_name}</p>
-                </div>
-                <div className="flex justify-between items-center gap-3">
-                    <label>Price:</label>
-                    <p className="font-semibold">${price}</p>
-                </div>
-                <div className="flex justify-between items-center  gap-3">
-                    <label>Available Seats:</label>
-                    <p className="font-semibold">{available_seats}</p>
-                </div>
-
-                <div className="divider w-40"></div>
-
-                <div className="flex gap-5">
-                    <label>Instructor:</label>
-                    <p className="font-semibold">{instructor_name}</p>
-                </div>
-
-                {
-                    isAdmin || isInstructor ?
-                        <div className="text-center mt-5">
-                            <button onClick={handleSelect} disabled className="btn btn-warning btn-sm bg-amber-300">Select This Class</button>
+                        <div className="flex justify-between items-center  gap-3">
+                            <label>Name:</label>
+                            <p className="font-semibold">{class_name}</p>
                         </div>
-                        :
-                        <div className="text-center mt-5">
-                            <button onClick={handleSelect} disabled={available_seats === 0} className="btn btn-warning btn-sm bg-amber-300">Select This Class</button>
+                        <div className="flex justify-between items-center gap-3">
+                            <label>Price:</label>
+                            <p className="font-semibold">${price}</p>
                         </div>
-                }
-            </div>
+                        <div className="flex justify-between items-center  gap-3">
+                            <label>Available Seats:</label>
+                            <p className="font-semibold">{available_seats}</p>
+                        </div>
+
+                        <div className="divider w-40"></div>
+
+                        <div className="flex gap-5">
+                            <label>Instructor:</label>
+                            <p className="font-semibold">{instructor_name}</p>
+                        </div>
+
+                        {
+                            isAdmin || isInstructor ?
+                                <div className="text-center mt-5">
+                                    <button onClick={handleSelect} disabled className="btn btn-warning btn-sm bg-amber-300">Select This Class</button>
+                                </div>
+                                :
+                                <div className="text-center mt-5">
+                                    <button onClick={handleSelect} disabled={available_seats === 0} className="btn btn-warning btn-sm bg-amber-300">Select This Class</button>
+                                </div>
+                        }
+                    </div>
+                </div>
+           
         </div>
+
     );
 };
 
