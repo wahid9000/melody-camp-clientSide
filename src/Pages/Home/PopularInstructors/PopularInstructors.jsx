@@ -21,10 +21,12 @@ const PopularInstructors = () => {
 
     return (
         <div>
+          
             <SectionTitle
                 heading={"Popular Instructors"}
                 subHeading={"We are proud of our instructors. They work hard for their students and thats what matters the most."}
             ></SectionTitle>
+         
 
             <div className="grid md:grid-cols-3 gap-8">
                 {

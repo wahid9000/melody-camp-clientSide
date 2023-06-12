@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import axios from "axios";
+import useScrollTop from "../../hooks/useScrollTop";
 
 const SignUp = () => {
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
     const { createUser, updateUserProfile, logOut } = useContext(AuthContext)
     const navigate = useNavigate();
 
@@ -49,9 +52,9 @@ const SignUp = () => {
     const password = watch('password');
 
     return (
-        <div className='background h-[850px]'>
+        <div className='background h-[1080px]'>
             <div>
-                <div className='pt-12 md:pt-5'>
+                <div className='pt-36 md:pt-44'>
                     <h2 className='text-5xl text-center font-semibold mb-8 md:mb-5'>Sign Up</h2>
                     <div className='w-10/12 md:w-1/3 mx-auto bg-white p-8 rounded-lg'>
                         <form onSubmit={handleSubmit(onSubmit)} className='space-y-7'>
@@ -108,7 +111,7 @@ const SignUp = () => {
                             {errors.photoURL && <span className="text-red-600">PhotoURL field is required</span>}
 
                             <div className='form-control'>
-                                <input value={"Sign Up"} className='btn w-1/3 mx-auto btn-warning font-bold mt-3 bg-amber-300' type="submit" />
+                                <input value={"Sign Up"} className="btn capitalize rounded-md bg-[#180e59] border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#0f244f] text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" type="submit" />
                             </div>
                         </form>
                         <div className='text-center mt-3'>

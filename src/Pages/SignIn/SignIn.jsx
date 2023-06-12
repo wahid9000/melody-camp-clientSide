@@ -7,8 +7,12 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
 import SocialLogin from '../../Components/SocialLogin/SocialLogin';
-const SignIn = () => {
+import useScrollTop from '../../hooks/useScrollTop';
 
+
+const SignIn = () => {
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
     const { loginUser } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +27,7 @@ const SignIn = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 reset(),
-                navigate(from, {replace: true})
+                    navigate(from, { replace: true })
                 Swal.fire({
                     title: 'Login Success',
                     text: 'User LoggedIn Successfully',
@@ -43,10 +47,10 @@ const SignIn = () => {
     }
 
     return (
-        <div className='background h-screen'>
-            <div>
+        <div className='background h-[900px]'>
+            <div className='pt-24 md:pt-36'>
                 <div className='pt-12 md:pt-5'>
-                    <h2 className='text-5xl text-center font-semibold mb-8 md:mb-5'>Sign In</h2>
+                    <h2 className='text-5xl text-center font-semibold mb-10 md:mb-5'>Sign In</h2>
                     <div className='w-10/12 md:w-1/3 mx-auto bg-white p-8 rounded-lg'>
                         <form onSubmit={handleSubmit(onSubmit)} className='space-y-7'>
 
@@ -72,7 +76,7 @@ const SignIn = () => {
                             {errors.password && <span>This field is required</span>}
 
                             <div className='form-control'>
-                                <input className='btn w-1/3 mx-auto btn-warning font-bold mt-3 bg-amber-300' type="submit" value={"Sign In"} />
+                                <input className="btn capitalize rounded-md bg-[#30075e] border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#0c204c] text-white hover:bg-opacity-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" type="submit" value={"Sign In"} />
                             </div>
                         </form>
                         <div className='text-center mt-3'>
@@ -85,7 +89,7 @@ const SignIn = () => {
                     </div>
                 </div>
 
-            
+
             </div>
         </div>
     );

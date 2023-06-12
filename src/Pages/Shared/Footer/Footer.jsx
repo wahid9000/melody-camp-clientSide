@@ -4,15 +4,15 @@ import { FaAddressCard, FaMailchimp, FaPhoneAlt } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className="mt-24">
-            <footer className="footer p-10 bg-[#faf2de] text-base-content h-full md:h-64 items-center">
+            <footer className="footer text-white p-10 bg-[#08031d] opacity-85  h-full md:h-64 items-center">
                 <div>
                     <Link to='/'>
                         <div><img src="logo.png" className=" rounded-2xl w-48" alt="" /></div>
                     </Link>
-                    <p className='text-lg text-black roboto'>Melody Camp<br />Music Instrument Learning School</p>
+                    <p className='text-lg text-white roboto'>Melody Camp<br />Music Instrument Learning School</p>
                 </div>
 
-                <div className="text-black">
+                <div>
                     <span className="footer-title">Contact Information</span>
                     <div className='flex gap-1 items-center'>
                         <FaPhoneAlt></FaPhoneAlt>
@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="text-black">
+                <div>
                     <span className="footer-title">Address</span>
                     <div className='flex gap-1 items-center'>
                         <FaAddressCard></FaAddressCard>
@@ -34,7 +34,7 @@ const Footer = () => {
 
                 </div>
             </footer>
-            <div className='text-center text-black bg-[#faf2de] pb-5'>
+            <div className='text-center text-white bg-[#08031d] opacity-85  pb-5'>
                 <h2>Copyright © 2023 Melody Camp</h2>
             </div>
         </div>

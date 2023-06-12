@@ -6,13 +6,13 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const PaymentHistory = () => {
     const [axiosSecure] = useAxiosSecure();
-    const {loading} = useContext(AuthContext)
+    const {user, loading} = useContext(AuthContext)
 
    const {data: paymentHistory} = useQuery({
-    queryKey: ['paymentHistory'],
+    queryKey: ['paymentHistory', user?.email],
     enabled: !loading,
     queryFn: async() => {
-        const res = await axiosSecure.get('/paymentHistory');
+        const res = await axiosSecure.get(`/paymentHistory?email=${user?.email}`);
         return res.data;
 
     }
@@ -22,7 +22,7 @@ const PaymentHistory = () => {
         <div>
             <div>
                 <div className="mt-3">
-                    <h2 className="text-3xl font-semibold mb-5">My Payment History</h2>
+                    <h2 className="text-3xl font-semibold mb-5">My Payment History : {paymentHistory?.length}</h2>
                     <div className="divider"></div> 
 
                     <div className="mt-10">

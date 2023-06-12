@@ -6,13 +6,13 @@ import { useQuery } from "@tanstack/react-query";
 const EnrolledClass = () => {
 
     const [axiosSecure] = useAxiosSecure();
-    const { loading } = useContext(AuthContext)
+    const {user, loading } = useContext(AuthContext)
 
     const { data: enrolled } = useQuery({
-        queryKey: ['enrolled'],
+        queryKey: ['enrolled', user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axiosSecure.get('/enrolled');
+            const res = await axiosSecure.get(`/enrolled?email=${user?.email}`);
             return res.data;
 
         }
@@ -23,7 +23,7 @@ const EnrolledClass = () => {
         <div>
             <div>
                 <div className="mt-3">
-                    <h2 className="text-3xl font-semibold mb-5">My Enrolled Classes</h2>
+                    <h2 className="text-3xl font-semibold mb-5">My Enrolled Classes: {enrolled?.length}</h2>
                     <div className="divider"></div> 
 
                     <div className="mt-10">

@@ -38,7 +38,7 @@ const SelectedClass = () => {
 
     return (
         <div className="mt-3">
-            <h2 className="text-3xl font-semibold mb-5">My Selected Classes: {selected.length}</h2>
+            <h2 className="text-3xl font-semibold mb-5">My Selected Classes: {selected?.length}</h2>
             <div className="divider"></div>
 
             <div className="mt-10">
