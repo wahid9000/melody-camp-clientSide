@@ -23,7 +23,7 @@ const EnrolledClass = () => {
         <div>
             <div>
                 <div className="mt-3">
-                    <h2 className="text-3xl font-semibold mb-5">My Enrolled Classes: {enrolled?.length}</h2>
+                    <h2 className="text-3xl font-semibold mb-5 font-primary">My Enrolled Classes: {enrolled?.length}</h2>
                     <div className="divider"></div> 
 
                     <div className="mt-10">
@@ -31,7 +31,7 @@ const EnrolledClass = () => {
                     
                                 <table className="table table-zebra">
 
-                                <thead className="text-lg text-white">
+                                <thead className="text-lg text-white font-primary">
                                     <tr>
                                         <th className="bg-[#1b2065]">#</th>
                                         <th className="bg-[#1b2065]">Class Name</th>
@@ -39,7 +39,7 @@ const EnrolledClass = () => {
                                         <th className="bg-[#1b2065]">Date of Enrollment</th>
                                     </tr>
                                 </thead>
-                                <tbody className=" text-lg">
+                                <tbody className="font-secondary text-lg">
                                     {
                                         enrolled?.map((singleClass, index) =>
                                             <tr key={singleClass._id}>

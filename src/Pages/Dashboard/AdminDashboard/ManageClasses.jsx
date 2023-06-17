@@ -92,7 +92,7 @@ const ManageClasses = () => {
                                     <th className="bg-[#1b2065]">Send Feedback</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className=" font-secondary ">
                                 {
                                     manageClasses.map((singleClass, index) =>
                                         <tr key={singleClass._id}>

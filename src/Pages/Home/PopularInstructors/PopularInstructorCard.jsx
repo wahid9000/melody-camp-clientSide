@@ -8,7 +8,7 @@ const PopularInstructorCard = ({ instructor }) => {
                 <img src={photoURL} alt="Shoes" className="w-48 rounded-full" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="card-title font-primary">{name}</h2>
             </div>
         </div>
     );

@@ -57,14 +57,14 @@ const NavBar = () => {
     }
 
     return (
-        <div className="navbar text-white bg-[#08031d] opacity-85 fixed z-10 lg:px-28 py-5">
+        <div className="navbar font-secondary text-white bg-[#08031d] opacity-85 fixed z-10 lg:px-28 py-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content bg-[#08031d] mt-3 p-2 shadow z-40 rounded-box w-52">
-                        <li><ActiveLink to='/'>Home</ActiveLink></li>
+                        <li><ActiveLink to='/'><p className="text-2xl">Home</p></ActiveLink></li>
                         <li><ActiveLink to='/instructors'>Instructors</ActiveLink></li>
                         <li><ActiveLink to='/classes'>Classes</ActiveLink></li>
                         {
@@ -80,7 +80,7 @@ const NavBar = () => {
                     <li><ActiveLink to='/instructors'>Instructors</ActiveLink></li>
                     <li><ActiveLink to='/classes'>Classes</ActiveLink></li>
                     {
-                        user && <li><ActiveLink to={isAdmin ? '/dashboard/manageClasses' : (isInstructor ? '/dashboard/addClass' : '/dashboard/mySelectedClass')}>Dashboard</ActiveLink></li>
+                        user && <li className="text-[17px] text-[#e5b0b0]"><Link to={isAdmin ? '/dashboard/manageClasses' : (isInstructor ? '/dashboard/addClass' : '/dashboard/mySelectedClass')}>Dashboard</Link></li>
                     }
 
                 </ul>
@@ -127,7 +127,7 @@ const NavBar = () => {
                         </div>
 
                         :
-                        <ActiveLink to='/signIn'><button className="btn capitalize rounded-md bg-[#fffeff] border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#3665ca] text-black hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Sign In</button></ActiveLink>
+                        <ActiveLink to='/signIn'><button className="btn capitalize rounded-md bg-[#fffeff] border bg-opacity-80 px-4 py-2 text-sm font-bold hover:bg-[#3665ca] text-black hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">Sign In</button></ActiveLink>
                 }
 
             </div>

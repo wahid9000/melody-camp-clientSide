@@ -67,7 +67,7 @@ const ManageUsers = () => {
                                 <th className="bg-[#1b2065]">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className=" font-secondary ">
                             {
                                 users.map((user, index) =>
                                     <tr key={user._id}>

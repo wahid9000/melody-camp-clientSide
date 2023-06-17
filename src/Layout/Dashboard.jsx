@@ -13,7 +13,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className="drawer lg:drawer-open">
+            <div className="drawer lg:drawer-open font-primary">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     <div>
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
                                     <Slide>
                                         <div className="space-y-5">
-                                            <li><h2 className="text-2xl font-bold text-white">Admin Dashboard</h2></li>
+                                            <li><h2 className="text-2xl font-bold text-white"> Admin Dashboard</h2></li>
                                             <div className="divider bg-white h-1"></div>
                                             <li><RouteLink to='/dashboard/manageClasses' className="text-xl font-semibold text-slate-50"><p className="mt-4">Manage Classes</p></RouteLink></li>
                                             <li><RouteLink to='/dashboard/manageUsers' className="text-xl font-semibold">Manage Users</RouteLink></li>

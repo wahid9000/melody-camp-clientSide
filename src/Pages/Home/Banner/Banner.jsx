@@ -25,12 +25,12 @@ const Banner = () => {
                     <div className='absolute top-[20%] lg:top-[25%] text-white font-semi '>
                         <div className='flex justify-center items-center'>
                    
-                                <h2 className='mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the strongest form of magic.."}</h2>
+                                <h2 className='font-primary mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the strongest form of magic.."}</h2>
                        
                         </div>
 
                         <div className='text-center mt-4  md:mt-10'>
-                            <Link to='/classes'><button className="btn capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
+                            <Link to='/classes'><button className="btn font-secondary capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm font-bold hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
                         </div>
                     </div>
                 </div>
@@ -40,10 +40,10 @@ const Banner = () => {
                     </div>
                     <div className='absolute  top-[20%]  md:top-[25%] text-white font-semi '>
                         <div className='flex justify-center items-center '>
-                            <h2 className='mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the shorthand of emotion.."}</h2>
+                            <h2 className='font-primary mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the shorthand of emotion.."}</h2>
                         </div>
                         <div className='text-center  mt-4  md:mt-10'>
-                            <Link to='/classes'><button className="btn capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
+                            <Link to='/classes'><button className="btn font-secondary font-bold capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
                         </div>
                     </div>
                 </div>
@@ -53,10 +53,10 @@ const Banner = () => {
                     </div>
                     <div className='absolute  top-[20%]   md:top-[25%] text-white font-semi '>
                         <div className='flex justify-center items-center'>
-                            <h2 className='mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the language of the spirit.."}</h2>
+                            <h2 className='font-primary mx-auto w-9/12 md:w-1/2 text-white text-3xl text-center font-semibold lg:text-8xl'>{"Music is the language of the spirit.."}</h2>
                         </div>
                         <div className='text-center mt-4 md:mt-10'>
-                            <Link to='/classes'><button className="btn capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm font-medium hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
+                            <Link to='/classes'><button className="btn capitalize rounded-md bg-blue-950 border bg-opacity-80 px-4 py-2 text-sm font-secondary font-bold hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">See Our Classes</button></Link>
                         </div>
                     </div>
                 </div>

@@ -40,7 +40,7 @@ const MyClass = () => {
                                 <th className="bg-[#1b2065]">Feedback</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className=" font-secondary ">
                             {
                                 classes.map((singleClass, index) =>
                                     <tr key={singleClass._id}>

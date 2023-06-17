@@ -38,14 +38,14 @@ const SelectedClass = () => {
 
     return (
         <div className="mt-3">
-            <h2 className="text-3xl font-semibold mb-5">My Selected Classes: {selected?.length}</h2>
+            <h2 className="text-3xl font-semibold mb-5 font-primary">My Selected Classes: {selected?.length}</h2>
             <div className="divider"></div>
 
             <div className="mt-10">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
 
-                        <thead className=" text-lg text-white">
+                        <thead className=" text-lg text-white font-primary">
                             <tr>
                                 <th className="bg-[#1b2065]">#</th>
                                 <th className="bg-[#1b2065]">Class Name</th>
@@ -55,7 +55,7 @@ const SelectedClass = () => {
                                 <th className="bg-[#1b2065]">Make Payment</th>
                             </tr>
                         </thead>
-                        <tbody className=" text-lg">
+                        <tbody className="font-secondary text-lg">
                             {
                                 selected?.map((item, index) =>
                                     <tr key={item._id}>

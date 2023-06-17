@@ -41,9 +41,9 @@ const Reviews = () => {
                                         <img className="md:w-72 w-full mx-auto mb-10 rounded-full" src={review.image} alt="" />
                              
                                     
-                                    <p className="text-justify">{review.details}</p>
-                                    <h2 className="text-xl mt-10">{review.name}</h2>
-                                    <p>{review.category}</p>
+                                    <p className="text-justify font-secondary">{review.details}</p>
+                                    <h2 className="text-xl font-primary mt-10">{review.name}</h2>
+                                    <p className="font-primary">{review.category}</p>
                                     
                                 </div>
                             </div>

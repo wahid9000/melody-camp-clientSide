@@ -6,8 +6,8 @@ const SectionTitle = ({ heading, subHeading }) => {
             <div className="text-center w-full">
 
                 <Fade direction="up" delay={10}>
-                <h3 className="text-4xl md:text-5xl uppercase font-bold">{heading}</h3>
-                    <p className="text-lg font-semibold mt-3">{subHeading}</p>
+                <h3 className="text-4xl  font-primary md:text-5xl uppercase font-bold">{heading}</h3>
+                    <p className="text-slate-600 text-lg font-secondary font-semibold mt-3">{subHeading}</p>
                 </Fade>
 
                 <div className="divider w-60 mx-auto my-10"></div>

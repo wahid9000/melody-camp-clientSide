@@ -50,9 +50,9 @@ const SignIn = () => {
         <div className='background h-[900px]'>
             <div className='pt-24 md:pt-36'>
                 <div className='pt-12 md:pt-5'>
-                    <h2 className='text-5xl text-center font-semibold mb-10 md:mb-5'>Sign In</h2>
+                    <h2 className='text-5xl text-center font-semibold mb-10 md:mb-5 font-primary'>Sign In</h2>
                     <div className='w-10/12 md:w-1/3 mx-auto bg-white p-8 rounded-lg'>
-                        <form onSubmit={handleSubmit(onSubmit)} className='space-y-7'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='space-y-7 font-secondary'>
 
                             <div className='form-control'>
                                 <label className='font-bold mb-3' htmlFor="email">Email:</label>

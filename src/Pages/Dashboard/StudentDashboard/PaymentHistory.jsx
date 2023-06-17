@@ -22,14 +22,14 @@ const PaymentHistory = () => {
         <div>
             <div>
                 <div className="mt-3">
-                    <h2 className="text-3xl font-semibold mb-5">My Payment History : {paymentHistory?.length}</h2>
+                    <h2 className="text-3xl font-semibold mb-5 font-primary">My Payment History : {paymentHistory?.length}</h2>
                     <div className="divider"></div> 
 
                     <div className="mt-10">
                         <div className="overflow-x-auto">
                             <table className="table table-zebra">
 
-                                <thead className="text-white text-lg">
+                                <thead className="font-primary text-white text-lg">
                                     <tr>
                                         <th className="bg-[#1b2065]">#</th>
                                         <th className="bg-[#1b2065]">Date</th>
@@ -41,7 +41,7 @@ const PaymentHistory = () => {
                             
                                     </tr>
                                 </thead>
-                                <tbody className=" text-lg">
+                                <tbody className="font-secondary text-lg">
                                     {
                                         paymentHistory?.map((singleClass, index) =>
                                             <tr key={singleClass._id}>

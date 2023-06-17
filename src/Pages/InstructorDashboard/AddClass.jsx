@@ -60,37 +60,37 @@ const AddClass = () => {
             <div>
                 <form className="space-y-5 mt-12" onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid md:grid-cols-2 gap-6 mx-auto w-11/12">
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Class Name:</label>
                             <input type="text" {...register("class_name", { required: true })} placeholder="Class Name*" className="mt-3 input input-bordered w-full max-w-md" />
                             
                         </div>
 
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Instructor Name:</label>
                             <input type="text" {...register("instructor_name", { required: true })} defaultValue={user?.displayName} readOnly placeholder="Instructor Name*" className="mt-3 input input-bordered w-full max-w-md" />
                            
                         </div>
 
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Class Image:</label>
                             <input type="file" {...register("class_image", { required: true })} className="mt-3 file-input file-input-bordered w-full max-w-md" />
                         </div>
                        
 
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Instructor Email:</label>
                             <input type="text" defaultValue={user?.email} readOnly  {...register("instructor_email", { required: true })} placeholder="Instructor Email*" className="mt-3 input input-bordered w-full max-w-md" />
                             
                         </div>
 
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Available Seats:</label>
                             <input type="text" {...register("available_seats", { required: true })} placeholder="Available Seats*" className="mt-3 input input-bordered w-full max-w-md" />
                       
                         </div>
 
-                        <div className="form-control">
+                        <div className="form-control font-secondary ">
                             <label>Price:</label>
                             <input type="text" {...register("price", { required: true })} placeholder="Price*" className="mt-3 input input-bordered w-full max-w-md" />
                             
@@ -99,7 +99,7 @@ const AddClass = () => {
                     </div>
 
                    <div className="w-11/12 mx-auto">
-                   <input className="btn btn-block btn-primary bg-[#1b2065] text-white" type="submit" value={"Add  Class"} />
+                   <input className="btn btn-block capitalize font-secondary btn-primary bg-[#1b2065] text-white" type="submit" value={"Add  Class"} />
                    </div>
                 </form>
             </div>

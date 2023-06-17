@@ -123,7 +123,7 @@ const CheckoutForm = ({ classes }) => {
                         },
                     }}
                 />
-                <div className="text-center">
+                <div className="text-left">
                     <button className="btn btn-primary bg-blue-950 text-[#ffffff]" type="submit" disabled={!stripe || !clientSecret || processing}>
                         Make Your Payment
                     </button>

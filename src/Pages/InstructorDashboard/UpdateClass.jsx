@@ -57,25 +57,26 @@ const UpdateClass = () => {
 
             <form className="space-y-5 mt-12" onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid md:grid-cols-2 gap-6 mx-auto w-11/12">
-                    <div className="form-control">
+                    
+                    <div className="form-control font-secondary ">
                         <label>Class Name:</label>
                         <input type="text" defaultValue={classes.class_name} {...register("class_name", { required: true })} placeholder="Class Name*" className="mt-3 input input-bordered w-full max-w-md" />
 
                     </div>
 
-                    <div className="form-control">
+                    <div className="form-control font-secondary ">
                         <label>Class Image:</label>
                         <input type="file" {...register("class_image", { required: true })} className="mt-3 file-input file-input-bordered w-full max-w-md" required/>
                     </div>
 
 
-                    <div className="form-control">
+                    <div className="form-control font-secondary ">
                         <label>Available Seats:</label>
                         <input type="text" defaultValue={classes.available_seats} {...register("available_seats", { required: true })} placeholder="Available Seats*" className="mt-3 input input-bordered w-full max-w-md" />
 
                     </div>
 
-                    <div className="form-control">
+                    <div className="form-control font-secondary ">
                         <label>Price:</label>
                         <input type="text" defaultValue={classes.price}  {...register("price", { required: true })} placeholder="Price*" className="mt-3 input input-bordered w-full max-w-md" />
 
@@ -84,7 +85,7 @@ const UpdateClass = () => {
                 </div>
 
                 <div className="w-11/12 mx-auto">
-                <input className="btn btn-block btn-primary bg-[#1b2065] text-white" value={'Update'} type="submit" />
+                <input className="btn font-secondary capitalize btn-block btn-primary bg-[#1b2065] text-white" value={'Update Class'} type="submit" />
                 </div>
             </form>
         </div>

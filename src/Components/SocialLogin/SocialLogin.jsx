@@ -35,7 +35,7 @@ const SocialLogin = () => {
     return (
         <div>
             <div className="divider">OR</div>
-            <button onClick={handleGoogleLogin} className="btn btn-outline btn-warning"><FaGoogle></FaGoogle>Continue With Google</button>
+            <button onClick={handleGoogleLogin} className="btn btn-outline text-[#30075e]"><FaGoogle></FaGoogle>Continue With Google</button>
         </div>
     );
 };

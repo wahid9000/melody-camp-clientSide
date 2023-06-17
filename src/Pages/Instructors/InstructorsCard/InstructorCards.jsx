@@ -7,10 +7,10 @@ const InstructorCards = ({instructor}) => {
                 <img src={photoURL} className="w-44 rounded-xl" alt="" />
             </div>
             <div>
-                <h2 className="font-bold text-xl">Profile Details</h2>
+                <h2 className="font-bold text-xl font-primary">Profile Details</h2>
                 <div className="divider w-40"></div> 
-                <p>Name: <span className="font-semibold">{name}</span></p>
-                <p>Email: <span className="font-semibold">{email}</span></p>
+                <p>Name: <span className="font-semibold font-secondary">{name}</span></p>
+                <p>Email: <span className="font-semibold font-secondary">{email}</span></p>
             </div>
         </div>
     );

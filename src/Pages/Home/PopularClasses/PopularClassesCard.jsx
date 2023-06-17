@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
+import { FaArrowRight } from 'react-icons/fa';
 
 const PopularClassesCard = ({ singleClass }) => {
-    const { class_name, class_image } = singleClass;
+    const { class_name, class_image, enrolledStudents } = singleClass;
+    // 
     return (
-        <div className="border flex-col h-fit px-10 py-5 w-full mx-auto group">
-            <div className="border shadow-xl group-hover:scale-110 transition">
-                <figure>
-                    <img src={class_image} alt="" />
+        <div className="card  flex-col pb-5 border-y-4 rounded-none w-full mx-auto">
+            <div className="border shadow-xl  group">
+                <figure className="group-hover:scale-110 transition">
+                    <img src={class_image} className="h-60" alt="" />
+                    <p className="bg-slate-900 absolute right-0 top-0 font-primary text-white p-2">Students Enrolled: {enrolledStudents}</p>
                 </figure>
             </div>
-            <div className="text-center mt-8">
-                <h2 className="text-2xl font-semibold mb-4">{class_name}</h2>
+            <div className="mt-8 px-5">
+                <h2 className="text-2xl font-semibold mb-4 font-primary">{class_name}</h2>
                 <Link to='/classes'><button
-                    className="btn capitalize rounded-md bg-blue-950 border px-4 py-2 text-sm font-medium hover:bg-[#3045cd] text-white hover:bg-opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                > View Details
+                    className="btn font-secondary capitalize rounded-md bg-white border-b-4 border-blue-950 px-2 text-sm font-medium hover:border-black hover:bg-blue-950 text-blue-950 hover:bg-opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                > Enroll Now <FaArrowRight></FaArrowRight> 
                     </button></Link>
             </div>
         </div>
